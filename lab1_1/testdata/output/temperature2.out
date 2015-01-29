@@ -1,0 +1,11 @@
+Enter temperature: 
+Choose source scale:
+  1. Celsius
+  2. Fahrenheit
+  3. Kelvin
+Enter your choice: 
+Choose destination scale:
+  1. Celsius
+  2. Kelvin
+Enter your choice: 
+12.3 degrees Fahrenheit = 262.21 degrees Kelvin

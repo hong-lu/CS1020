@@ -1,0 +1,11 @@
+Enter temperature: 
+Choose source scale:
+  1. Celsius
+  2. Fahrenheit
+  3. Kelvin
+Enter your choice: 
+Choose destination scale:
+  1. Celsius
+  2. Fahrenheit
+Enter your choice: 
+300.0 degrees Kelvin = 26.85 degrees Celsius
