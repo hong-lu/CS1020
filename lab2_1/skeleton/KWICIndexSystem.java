@@ -9,10 +9,23 @@
 // Please remove this line and its preceding 3 lines.
 
 // Add import statement(s) below
+import java.util.*;
 
 public class KWICIndexSystem {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-
-	}
+ public static void main(String[] args) {
+  Scanner sc = new Scanner(System.in);
+  KWIC myKWIC = new KWIC();
+  int numOfIgnoreWords = sc.nextInt();
+  sc.nextLine();
+  for (int i = 0; i < numOfIgnoreWords; i++){
+    myKWIC.addWordToIgnoreWordList(sc.nextLine());
+  }
+  int numOfTitles = sc.nextInt();
+  sc.nextLine();
+  for (int i = 0; i < numOfTitles; i++){
+    myKWIC.addTitleToTitleList(sc.nextLine());
+  }
+  myKWIC.findKWICIndex();
+  myKWIC.printOutResult();
+ }
 }
