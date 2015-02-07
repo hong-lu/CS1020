@@ -13,18 +13,27 @@ import java.util.*;
 
 public class KWICIndexSystem {
  public static void main(String[] args) {
+   
   Scanner sc = new Scanner(System.in);
   KWIC myKWIC = new KWIC();
   int numOfIgnoreWords = sc.nextInt();
+  
+  //Skip new line char
   sc.nextLine();
+  
+  //Add ignoreWordList
   for (int i = 0; i < numOfIgnoreWords; i++){
     myKWIC.addWordToIgnoreWordList(sc.nextLine());
   }
+  
+  //Add titles to titleList;
   int numOfTitles = sc.nextInt();
   sc.nextLine();
   for (int i = 0; i < numOfTitles; i++){
     myKWIC.addTitleToTitleList(sc.nextLine());
   }
+  
+  //Call the instance method to print out final result
   myKWIC.findKWICIndex();
   myKWIC.printOutResult();
  }
