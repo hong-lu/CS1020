@@ -10,65 +10,69 @@
 import java.util.*;
 
 class MyMap {
-	private char[][] charMap; // Map containing the characters (labels)
-	private int[][] intMap;  // Map containing the gold values
-	private int nRow; // number of rows
-	private int nCol; // number of columns
+ private char[][] charMap; // Map containing the characters (labels)
+ private int[][] intMap;  // Map containing the gold values
+ private int nRow; // number of rows
+ private int nCol; // number of columns
 
-	public MyMap() {};  
+ public MyMap() {};  
 
-	public MyMap(Scanner sc) {       
-		nRow = sc.nextInt();
-		nCol = sc.nextInt();
-		charMap = new char[nRow][nCol];
-		intMap = new int[nRow][nCol];   
-		String line;
-		for (int i = 0; i < nRow; i++) {
-			line = sc.next();
-			for (int j = 0; j < nCol; j++) {        
-				setLabel(i, j, line.charAt(j));
-				setGoldVal(i, j, 0);        
-			}
-		}
-	}
+ public MyMap(Scanner sc) {       
+  nRow = sc.nextInt();
+  nCol = sc.nextInt();
+  charMap = new char[nRow][nCol];
+  intMap = new int[nRow][nCol];   
+  String line;
+  
+  for (int i = 0; i < nRow; i++) {
+   line = sc.next();
+   for (int j = 0; j < nCol; j++) {        
+    setLabel(i, j, line.charAt(j));
+    setGoldVal(i, j, 0);        
+   }
+  }
+ }
 
-	public int getNumRow() { 
-		return nRow; 
-	}
+ public int getNumRow() { 
+  return nRow; 
+ }
 
-	public int getNumCol() { 
-		return nCol; 
-	}
+ public int getNumCol() { 
+  return nCol; 
+ }
 
-	public char getLabel(int row, int col) { 
-		return charMap[row][col]; 
-	}
+ public char getLabel(int row, int col) { 
+  return charMap[row][col]; 
+ }
 
-	public int getGoldVal(int row, int col) { 
-		return intMap[row][col]; 
-	}
+ public int getGoldVal(int row, int col) { 
+  return intMap[row][col]; 
+ }
 
-	public void setLabel(int row, int col, char label) { 
-		charMap[row][col] = label; 
-	}
+ public void setLabel(int row, int col, char label) { 
+  charMap[row][col] = label; 
+ }
 
-	public void setGoldVal(int row, int col, int val) { 
-		intMap[row][col] = val; 
-	}
+ public void setGoldVal(int row, int col, int val) { 
+  intMap[row][col] = val; 
+ }
 
-	// To print the character map
-	public void display() {
-		// fill in the code
+ // To print the character map
+ public void display() {
+  // fill in the code
+   for (int i = 0; i < nRow; i++){
+     for (int j = 0; j < nCol; j++){
+       System.out.print(charMap[i][j]);
+     }
+     System.out.print("\n");
+   }
+ }
 
-
-	}
-
-	// Return true if row, col are within valid range,
-	// otherwise return false.
-	public boolean indexWithinRange(int row, int col) {
-		// fill in the code
-
-
-	}
+ // Return true if row, col are within valid range,
+ // otherwise return false.
+ public boolean indexWithinRange(int row, int col) {
+  // fill in the code
+   return row >= 0 && col >= 0 && row < this.getNumRow() && col < this.getNumCol();
+ }
 }
 
